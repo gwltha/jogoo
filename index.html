@@ -1,130 +1,342 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Desafio Matemático</title>
+    <title>Desafio Matemático ✨</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- DECORAÇÃO DO FUNDO -->
+    <div class="estrelas"></div>
+    <div class="brilho brilho-1"></div>
+    <div class="brilho brilho-2"></div>
+    <div class="brilho brilho-3"></div>
+
+
+    <!-- CABEÇALHO -->
+
     <header class="cabecalho">
+
         <div class="logo">
-            🚀 Desafio Matemático
+            <span class="logo-icone">✦</span>
+
+            <div>
+                <strong>Desafio</strong>
+                <span>Matemático</span>
+            </div>
         </div>
 
-        <div class="informacoes-jogo">
-            <span id="pontuacao">⭐ 0 pontos</span>
-            <span id="vidas">❤️❤️❤️</span>
+        <div class="status">
+
+            <div class="status-item">
+                <span>⭐</span>
+                <strong id="pontuacao">0</strong>
+                <small>pontos</small>
+            </div>
+
+            <div class="status-item">
+                <span id="vidas">❤️❤️❤️</span>
+            </div>
+
         </div>
+
     </header>
+
 
     <main>
 
-        <!-- Tela inicial -->
+        <!-- =========================
+             TELA INICIAL
+        ========================== -->
+
         <section id="tela-inicial" class="tela ativa">
 
-            <div class="card-principal">
-                <div class="icone-principal">🧠</div>
+            <div class="hero-card">
 
-                <h1>Desafio Matemático</h1>
+                <div class="decoracao-card">✦</div>
 
-                <p>
-                    Teste seus conhecimentos e descubra
-                    quantos pontos você consegue fazer!
-                </p>
-
-                <div class="regras">
-                    <div>🎯 Responda às perguntas</div>
-                    <div>⭐ Ganhe pontos</div>
-                    <div>❤️ Cuidado com suas vidas</div>
+                <div class="icone-hero">
+                    🧠
                 </div>
 
-                <button id="botao-iniciar" class="botao principal">
-                    Começar desafio 🚀
+                <span class="etiqueta">
+                    ✨ MISSÃO MATEMÁTICA
+                </span>
+
+                <h1>
+                    Desafio<br>
+                    <span>Matemático</span>
+                </h1>
+
+                <p class="subtitulo">
+                    Uma aventura de números, desafios
+                    e um segredo escondido...
+                </p>
+
+                <div class="mini-info">
+
+                    <div>
+                        <span>🎯</span>
+                        <strong>10</strong>
+                        <small>desafios</small>
+                    </div>
+
+                    <div>
+                        <span>❤️</span>
+                        <strong>3</strong>
+                        <small>vidas</small>
+                    </div>
+
+                    <div>
+                        <span>🔮</span>
+                        <strong>1</strong>
+                        <small>mistério</small>
+                    </div>
+
+                </div>
+
+                <button id="botao-iniciar" class="botao botao-principal">
+                    Começar aventura
+                    <span>→</span>
                 </button>
+
+                <div class="dica-inicial">
+                    💡 <strong>Dica:</strong> fique atento aos emojis misteriosos!
+                </div>
+
             </div>
 
         </section>
 
 
-        <!-- Tela do jogo -->
+        <!-- =========================
+             TELA DO QUIZ
+        ========================== -->
+
         <section id="tela-jogo" class="tela">
 
-            <div class="card-jogo">
+            <div class="quiz-card">
 
-                <div class="progresso">
-                    <span id="numero-pergunta">Pergunta 1 de 10</span>
+                <!-- TOPO -->
+
+                <div class="quiz-topo">
+
+                    <div>
+                        <span class="mini-label">
+                            DESAFIO
+                        </span>
+
+                        <strong id="numero-pergunta">
+                            01 / 10
+                        </strong>
+                    </div>
+
+                    <div class="missao">
+
+                        <span>🔐</span>
+
+                        <div>
+                            <small>ENIGMA</small>
+
+                            <div id="letras-enigma" class="letras-enigma">
+                                <span>?</span>
+                                <span>?</span>
+                                <span>?</span>
+                                <span>?</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BARRA -->
+
+                <div class="barra-container">
 
                     <div class="barra">
                         <div id="barra-progresso"></div>
                     </div>
+
                 </div>
 
-                <div class="pergunta-area">
 
-                    <span class="categoria" id="categoria">
-                        Matemática
-                    </span>
+                <!-- CATEGORIA -->
 
-                    <h2 id="pergunta">
-                        Pergunta aparecerá aqui
-                    </h2>
+                <div class="categoria" id="categoria">
+                    🔢 Operações
+                </div>
 
-                    <div id="alternativas" class="alternativas">
-                        <!-- As alternativas serão criadas pelo JavaScript -->
+
+                <!-- PERGUNTA -->
+
+                <div class="pergunta-container">
+
+                    <div class="numero-pergunta-decorativo">
+                        ?
                     </div>
 
-                    <div id="feedback" class="feedback"></div>
+                    <h2 id="pergunta">
+                        Quanto é 25 + 17?
+                    </h2>
 
                 </div>
 
-                <button id="botao-proxima" class="botao secundaria escondido">
-                    Próxima pergunta ➜
+
+                <!-- ALTERNATIVAS -->
+
+                <div id="alternativas" class="alternativas">
+                </div>
+
+
+                <!-- FEEDBACK -->
+
+                <div id="feedback" class="feedback">
+                </div>
+
+
+                <!-- BOTÃO -->
+
+                <button
+                    id="botao-proxima"
+                    class="botao botao-proxima escondido">
+
+                    Próximo desafio
+                    <span>→</span>
+
                 </button>
+
+
+                <!-- PISTA DO ENIGMA -->
+
+                <div id="pista-enigma" class="pista-enigma escondido">
+
+                    <span class="pista-icone">🔮</span>
+
+                    <div>
+                        <strong>Você encontrou uma pista!</strong>
+
+                        <p>
+                            Clique no emoji misterioso para
+                            descobrir uma letra.
+                        </p>
+                    </div>
+
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- Tela final -->
+        <!-- =========================
+             TELA FINAL
+        ========================== -->
+
         <section id="tela-final" class="tela">
 
-            <div class="card-principal resultado">
+            <div class="final-card">
 
-                <div id="icone-resultado" class="icone-principal">
+                <div class="final-brilho">
+                    ✦
+                </div>
+
+                <div id="icone-resultado" class="icone-final">
                     🏆
                 </div>
 
-                <h1>Desafio concluído!</h1>
+                <span class="etiqueta">
+                    MISSÃO CONCLUÍDA
+                </span>
+
+                <h1>
+                    Você conseguiu!
+                </h1>
 
                 <p id="mensagem-final">
                     Muito bem!
                 </p>
 
-                <div class="resultado-pontos">
-                    <span>Você fez:</span>
-                    <strong id="pontuacao-final">0 pontos</strong>
+
+                <!-- PONTUAÇÃO -->
+
+                <div class="pontuacao-final">
+
+                    <span>SUA PONTUAÇÃO</span>
+
+                    <strong id="pontuacao-final">
+                        0
+                    </strong>
+
+                    <small>pontos</small>
+
                 </div>
 
-                <div class="resultado-estatisticas">
+
+                <!-- ESTATÍSTICAS -->
+
+                <div class="estatisticas">
+
                     <div>
+                        <span>✅</span>
                         <strong id="acertos-final">0</strong>
-                        <span>Acertos</span>
+                        <small>acertos</small>
                     </div>
 
                     <div>
+                        <span>❌</span>
                         <strong id="erros-final">0</strong>
-                        <span>Erros</span>
+                        <small>erros</small>
                     </div>
+
+                    <div>
+                        <span>❤️</span>
+                        <strong id="vidas-final">0</strong>
+                        <small>vidas</small>
+                    </div>
+
                 </div>
 
-                <button id="botao-reiniciar" class="botao principal">
-                    Jogar novamente 🔄
+
+                <!-- ENIGMA FINAL -->
+
+                <div class="enigma-final">
+
+                    <div class="enigma-titulo">
+                        🔐 O ENIGMA SECRETO
+                    </div>
+
+                    <p>
+                        As letras que você encontrou formam:
+                    </p>
+
+                    <div id="palavra-final" class="palavra-final">
+                        <span>?</span>
+                        <span>?</span>
+                        <span>?</span>
+                        <span>?</span>
+                    </div>
+
+                    <div id="resultado-enigma">
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="botao-reiniciar"
+                    class="botao botao-principal">
+
+                    Jogar novamente
+                    <span>↻</span>
+
                 </button>
 
             </div>
@@ -133,10 +345,26 @@
 
     </main>
 
+
+    <!-- RODAPÉ -->
+
     <footer>
-        <p>🚀 Desafio Matemático • Projeto educativo para o 6º ano</p>
+
+        <span>✦</span>
+
+        Desafio Matemático
+
+        <span>✦</span>
+
+        <small>
+            Uma aventura para aprender brincando
+        </small>
+
     </footer>
 
+
     <script src="script.js"></script>
+
 </body>
+
 </html>
