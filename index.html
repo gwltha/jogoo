@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Desafio Matemático</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">
+            🚀 Desafio Matemático
+        </div>
+
+        <div class="informacoes-jogo">
+            <span id="pontuacao">⭐ 0 pontos</span>
+            <span id="vidas">❤️❤️❤️</span>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Tela inicial -->
+        <section id="tela-inicial" class="tela ativa">
+
+            <div class="card-principal">
+                <div class="icone-principal">🧠</div>
+
+                <h1>Desafio Matemático</h1>
+
+                <p>
+                    Teste seus conhecimentos e descubra
+                    quantos pontos você consegue fazer!
+                </p>
+
+                <div class="regras">
+                    <div>🎯 Responda às perguntas</div>
+                    <div>⭐ Ganhe pontos</div>
+                    <div>❤️ Cuidado com suas vidas</div>
+                </div>
+
+                <button id="botao-iniciar" class="botao principal">
+                    Começar desafio 🚀
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- Tela do jogo -->
+        <section id="tela-jogo" class="tela">
+
+            <div class="card-jogo">
+
+                <div class="progresso">
+                    <span id="numero-pergunta">Pergunta 1 de 10</span>
+
+                    <div class="barra">
+                        <div id="barra-progresso"></div>
+                    </div>
+                </div>
+
+                <div class="pergunta-area">
+
+                    <span class="categoria" id="categoria">
+                        Matemática
+                    </span>
+
+                    <h2 id="pergunta">
+                        Pergunta aparecerá aqui
+                    </h2>
+
+                    <div id="alternativas" class="alternativas">
+                        <!-- As alternativas serão criadas pelo JavaScript -->
+                    </div>
+
+                    <div id="feedback" class="feedback"></div>
+
+                </div>
+
+                <button id="botao-proxima" class="botao secundaria escondido">
+                    Próxima pergunta ➜
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Tela final -->
+        <section id="tela-final" class="tela">
+
+            <div class="card-principal resultado">
+
+                <div id="icone-resultado" class="icone-principal">
+                    🏆
+                </div>
+
+                <h1>Desafio concluído!</h1>
+
+                <p id="mensagem-final">
+                    Muito bem!
+                </p>
+
+                <div class="resultado-pontos">
+                    <span>Você fez:</span>
+                    <strong id="pontuacao-final">0 pontos</strong>
+                </div>
+
+                <div class="resultado-estatisticas">
+                    <div>
+                        <strong id="acertos-final">0</strong>
+                        <span>Acertos</span>
+                    </div>
+
+                    <div>
+                        <strong id="erros-final">0</strong>
+                        <span>Erros</span>
+                    </div>
+                </div>
+
+                <button id="botao-reiniciar" class="botao principal">
+                    Jogar novamente 🔄
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>🚀 Desafio Matemático • Projeto educativo para o 6º ano</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

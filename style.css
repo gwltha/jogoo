@@ -1,0 +1,515 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #7c3aed, transparent 35%),
+        radial-gradient(circle at bottom right, #06b6d4, transparent 35%),
+        #172554;
+
+    color: #172554;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho {
+    width: 100%;
+    padding: 18px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #4f46e5;
+}
+
+.informacoes-jogo {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   ÁREA PRINCIPAL
+========================= */
+
+main {
+    flex: 1;
+
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+    padding: 35px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tela {
+    display: none;
+    width: 100%;
+}
+
+.tela.ativa {
+    display: flex;
+    justify-content: center;
+
+    animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   CARD PRINCIPAL
+========================= */
+
+.card-principal,
+.card-jogo {
+    width: 100%;
+    max-width: 720px;
+
+    background: #ffffff;
+
+    border-radius: 28px;
+
+    padding: 45px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    border: 5px solid rgba(255, 255, 255, 0.6);
+}
+
+.icone-principal {
+    width: 100px;
+    height: 100px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #fef3c7;
+
+    border-radius: 50%;
+
+    font-size: 3.5rem;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #4338ca;
+
+    margin-bottom: 15px;
+}
+
+.card-principal > p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+
+    color: #475569;
+
+    max-width: 500px;
+    margin: 0 auto 25px;
+}
+
+
+/* =========================
+   REGRAS
+========================= */
+
+.regras {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin: 25px 0;
+}
+
+.regras div {
+    padding: 15px 8px;
+
+    background: #eef2ff;
+
+    border-radius: 15px;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    color: #3730a3;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.botao {
+    border: none;
+    border-radius: 16px;
+
+    padding: 16px 28px;
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+
+    min-height: 52px;
+}
+
+.botao:hover {
+    transform: translateY(-3px);
+}
+
+.botao:focus-visible {
+    outline: 4px solid #fbbf24;
+    outline-offset: 3px;
+}
+
+.principal {
+    background: linear-gradient(135deg, #f97316, #ef4444);
+    color: white;
+
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.35);
+}
+
+.principal:hover {
+    box-shadow: 0 12px 25px rgba(239, 68, 68, 0.45);
+}
+
+.secundaria {
+    background: #4f46e5;
+    color: white;
+
+    margin-top: 20px;
+}
+
+.escondido {
+    display: none;
+}
+
+
+/* =========================
+   JOGO
+========================= */
+
+.progresso {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+#numero-pergunta {
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+    color: #475569;
+}
+
+.barra {
+    width: 100%;
+    height: 12px;
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+#barra-progresso {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(90deg, #22c55e, #06b6d4);
+
+    border-radius: 20px;
+
+    transition: width 0.4s ease;
+}
+
+.categoria {
+    display: inline-block;
+
+    background: #ede9fe;
+    color: #6d28d9;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    font-size: 0.85rem;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+#pergunta {
+    font-size: 1.6rem;
+    line-height: 1.4;
+
+    margin-bottom: 25px;
+
+    color: #1e293b;
+}
+
+
+/* =========================
+   ALTERNATIVAS
+========================= */
+
+.alternativas {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.alternativa {
+    width: 100%;
+
+    min-height: 70px;
+
+    padding: 15px;
+
+    border: 3px solid #cbd5e1;
+
+    border-radius: 17px;
+
+    background: #f8fafc;
+
+    color: #1e293b;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.alternativa:hover {
+    background: #eef2ff;
+    border-color: #6366f1;
+
+    transform: translateY(-2px);
+}
+
+.alternativa:focus-visible {
+    outline: 4px solid #fbbf24;
+}
+
+.alternativa.correta {
+    background: #dcfce7;
+    border-color: #22c55e;
+    color: #166534;
+}
+
+.alternativa.errada {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+}
+
+.alternativa:disabled {
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   FEEDBACK
+========================= */
+
+.feedback {
+    min-height: 35px;
+
+    margin-top: 20px;
+
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.feedback.certo {
+    color: #16a34a;
+}
+
+.feedback.errado {
+    color: #dc2626;
+}
+
+
+/* =========================
+   RESULTADO
+========================= */
+
+.resultado-pontos {
+    margin: 25px auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.resultado-pontos span {
+    color: #64748b;
+}
+
+.resultado-pontos strong {
+    font-size: 2.4rem;
+    color: #f97316;
+}
+
+.resultado-estatisticas {
+    display: flex;
+    justify-content: center;
+
+    gap: 50px;
+
+    margin: 25px 0;
+}
+
+.resultado-estatisticas div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.resultado-estatisticas strong {
+    font-size: 2rem;
+    color: #4f46e5;
+}
+
+.resultado-estatisticas span {
+    color: #64748b;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    padding: 18px;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 0.85rem;
+
+    background: rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 650px) {
+
+    .cabecalho {
+        padding: 15px;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .informacoes-jogo {
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding: 20px 12px;
+    }
+
+    .card-principal,
+    .card-jogo {
+        padding: 28px 18px;
+
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #pergunta {
+        font-size: 1.3rem;
+    }
+
+    .regras {
+        grid-template-columns: 1fr;
+    }
+
+    .alternativas {
+        grid-template-columns: 1fr;
+    }
+
+    .resultado-estatisticas {
+        gap: 35px;
+    }
+}
